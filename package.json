@@ -5,14 +5,23 @@
   "author": "Julio Cesar <jcesarpereira2021@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "prepare": "npx husky install"
+    "prepare": "npx husky install",
+    "dev": "ts-node-dev --respawn --ignore-watch node_modules -- src/index.ts "
   },
   "devDependencies": {
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
     "commitizen": "^4.2.5",
     "cz-conventional-changelog": "3.3.0",
-    "husky": "^8.0.2"
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "husky": "^8.0.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "*"
   },
   "config": {
     "commitizen": {
