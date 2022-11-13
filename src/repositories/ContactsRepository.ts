@@ -30,6 +30,17 @@ class ContactsRepository {
     `, [name, email, phone])
     return row
   }
+
+  async update (id: string | number, { name, email, phone }: Partial<Contact>): Promise<Contact> {
+    const [row] = await db.execQuery(
+      `
+        UPDATE contacts 
+        SET name = $1, email = $2, phone = $3
+        WHERE id = $4
+        RETURNING *
+      `, [name, email, phone, id])
+    return row
+  }
 }
 
 export default new ContactsRepository()
