@@ -1,16 +1,28 @@
-import { Client } from 'pg'
+import { Client, ClientConfig } from 'pg'
 
-const client = new Client({
+let client: Client
+const connectionOptions: ClientConfig = {
   host: 'localhost',
   user: 'root',
   password: 'root',
   port: 5432,
   database: 'mycontacts'
-})
+}
+connectDatabase(connectionOptions)
 
-client.connect()
-  .then(() => console.log('DB has connected!'))
-  .catch(() => console.log('DB Connection was failed!'))
+function connectDatabase (connectionOptions: ClientConfig): void {
+  const connectionInterval =
+    setInterval(() => {
+      client = new Client(connectionOptions)
+
+      client.connect()
+        .then(() => {
+          clearInterval(connectionInterval)
+          console.log('Database successfully connected')
+        })
+        .catch(console.log)
+    }, 1000)
+}
 
 export async function execQuery<T = any> (query: string, values?: any[]): Promise<T[]> {
   const { rows } = await client.query(query, values)
