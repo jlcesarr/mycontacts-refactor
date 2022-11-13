@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "prepare": "npx husky install",
-    "build": "tsc && node dist/index.js",
+    "build": "tsc && NODE_ENV=production node dist/index.js",
     "dev": "ts-node-dev --respawn --ignore-watch node_modules -- src/index.ts "
   },
   "devDependencies": {

@@ -1,11 +1,16 @@
 import { Client, ClientConfig } from 'pg'
+import dotenv from 'dotenv'
+
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config()
+}
 
 let client: Client
 const connectionOptions: ClientConfig = {
-  host: 'localhost',
-  user: 'root',
-  password: 'root',
-  port: 5432,
+  host: process.env.POSTGRES_HOST,
+  user: process.env.POSTGRES_USERNAME,
+  password: process.env.POSTGRES_PASSWORD,
+  port: (process.env.PORT as unknown) as number,
   database: 'mycontacts'
 }
 connectDatabase(connectionOptions)
