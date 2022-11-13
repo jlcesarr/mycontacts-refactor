@@ -25,6 +25,18 @@ class ContactController {
 
     return response.status(201).json(contact)
   }
+
+  async show (request: Request, response: Response): Promise<Response> {
+    const { id } = request.params
+
+    const contact = await ContactsRepository.findById(id)
+
+    if (!contact) {
+      throw new AppError(404, 'Contact not found')
+    }
+
+    return response.json(contact)
+  }
 }
 
 export default new ContactController()
