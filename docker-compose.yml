@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  pg:
+    image: postgres
+    container_name: pg_db
+    volumes:
+      - ./src/database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+    ports:
+      - 5432:5432
+    
+
