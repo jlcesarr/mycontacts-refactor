@@ -5,7 +5,7 @@
 - [x] Deve ser possível listar os contatos
 - [x] Deve ser possível listar os contatos em ordem alfabética (ascendente) ou descendente
 - [x] Deve ser possível listar uma quantidade exata de contatos
-- [ ] Se o contato houver uma categoria vinculada, a categoria deve ser exibida
+- [x] Se o contato houver uma categoria vinculada, a categoria deve ser exibida
 
 ## Criação de contatos
 ### RF
@@ -20,7 +20,7 @@
 ## Busca por contatos
 ### RF
 - [x] Deve ser possível buscar um contato pelo ID
-- [ ] Se o contato houver uma categoria vinculada, a categoria deve ser exibida
+- [x] Se o contato houver uma categoria vinculada, a categoria deve ser exibida
 
 
 

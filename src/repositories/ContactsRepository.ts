@@ -12,15 +12,22 @@ class ContactsRepository {
   async findAll (orderBy: string = 'ASC', limit: string): Promise<Contact[] | []> {
     const direction = orderBy.toUpperCase() === 'DESC' ? 'DESC' : 'ASC'
     const rows = await db.execQuery(`
-        SELECT * FROM contacts
-        ORDER BY name ${direction}
+        SELECT contacts.*, categories.name AS category_name
+        FROM contacts
+        LEFT JOIN categories ON category_id = categories.id
+        ORDER BY contacts.name ${direction}
         LIMIT ${isNaN(Number(limit)) || limit === '0' ? 'NULL' : limit}
     `)
     return rows
   }
 
   async findById (id: string | number): Promise<Contact | undefined> {
-    const [row] = await db.execQuery('SELECT * FROM contacts WHERE id = $1', [id])
+    const [row] = await db.execQuery(`
+        SELECT contacts.*, categories.name AS category_name
+        FROM contacts
+        LEFT JOIN categories ON category_id = categories.id
+        WHERE contacts.id = $1
+    `, [id])
     return row
   }
 
