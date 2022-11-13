@@ -1,6 +1,5 @@
 # Contatos
 
-
 ## Listagem de contatos
 ### RF
 - [x] Deve ser possível listar os contatos
@@ -37,3 +36,39 @@
 
 ### RNF
 - [x] O feedback/resposta sobre a operação de excluir um contato deve ser estático, independentemente do resultado da operação
+
+
+# Categorias
+
+
+## Listagem de categorias
+
+### RF
+- [ ] Deve ser possível listar as categorias
+
+
+## Criação de categorias
+
+
+### RF
+- [ ] Deve ser possível criar uma categoria
+
+### RN
+- [ ] Uma categoria deve haver um nome
+- [ ] Não deve ser possível criar uma categoria, caso já exista uma outra categoria com o nome informado
+
+
+
+## Buscar por categorias
+
+### RF
+- [ ] Deve ser possível buscar uma categoria pelo ID
+
+
+## Excluir categorias
+
+### RF
+- [ ] Deve ser possível excluir uma categoria
+
+### RNF
+- [ ] O feedback/resposta sobre a operação de excluir uma categoria deve ser estático, independentemente do resultado da operação
