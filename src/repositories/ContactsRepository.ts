@@ -24,7 +24,7 @@ class ContactsRepository {
 
   async create ({ name, email, phone }: Omit<Contact, 'id'>): Promise<Contact> {
     const [row] = await db.execQuery(`
-      INSERT INTO contacts(name, email, phone) 
+      INSERT INTO contacts(name, email, phone)
       VALUES($1, $2, $3)
       RETURNING *
     `, [name, email, phone])
@@ -34,7 +34,7 @@ class ContactsRepository {
   async update (id: string | number, { name, email, phone }: Partial<Contact>): Promise<Contact> {
     const [row] = await db.execQuery(
       `
-        UPDATE contacts 
+        UPDATE contacts
         SET name = $1, email = $2, phone = $3
         WHERE id = $4
         RETURNING *
