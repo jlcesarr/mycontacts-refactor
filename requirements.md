@@ -62,7 +62,7 @@
 ## Buscar por categorias
 
 ### RF
-- [ ] Deve ser possível buscar uma categoria pelo ID
+- [x] Deve ser possível buscar uma categoria pelo ID
 
 
 ## Excluir categorias

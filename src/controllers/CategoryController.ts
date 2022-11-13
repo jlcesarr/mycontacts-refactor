@@ -27,6 +27,18 @@ class CategoryController {
 
     return response.status(201).json(category)
   }
+
+  async show (request: Request, response: Response): Promise<Response> {
+    const { id } = request.params
+
+    const category = await CategoriesRepository.findById(id)
+
+    if (!category) {
+      throw new AppError(404, 'Category not found')
+    }
+
+    return response.json(category)
+  }
 }
 
 export default new CategoryController()

@@ -11,6 +11,16 @@ class CategoriesRepository {
     return rows
   }
 
+  async findById (id: string | number): Promise<Category | undefined> {
+    const [row] = await db.execQuery(
+        `
+        SELECT *
+        FROM categories
+        WHERE id = $1
+        `, [id])
+    return row
+  }
+
   async findByName (name: string): Promise<Category | undefined> {
     const [row] = await db.execQuery(
         `
