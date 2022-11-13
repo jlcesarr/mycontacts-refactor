@@ -4,7 +4,7 @@
 ## Listagem de contatos
 ### RF
 - [x] Deve ser possível listar os contatos
-- [ ] Deve ser possível listar os contatos em ordem alfabética (ascendente) ou descendente
+- [x] Deve ser possível listar os contatos em ordem alfabética (ascendente) ou descendente
 - [ ] Deve ser possível listar uma quantidade exata de contatos
 
 

@@ -4,7 +4,8 @@ import AppError from '../utils/AppError'
 
 class ContactController {
   async index (request: Request, response: Response): Promise<Response> {
-    const contacts = await ContactsRepository.findAll()
+    const { orderBy, limit } = request.query
+    const contacts = await ContactsRepository.findAll(orderBy as string, limit as string)
     return response.json(contacts)
   }
 
