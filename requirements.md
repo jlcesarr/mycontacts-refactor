@@ -51,11 +51,11 @@
 
 
 ### RF
-- [ ] Deve ser possível criar uma categoria
+- [x] Deve ser possível criar uma categoria
 
 ### RN
-- [ ] Uma categoria deve haver um nome
-- [ ] Não deve ser possível criar uma categoria, caso já exista uma outra categoria com o nome informado
+- [x] Uma categoria deve haver um nome
+- [x] Não deve ser possível criar uma categoria, caso já exista uma outra categoria com o nome informado
 
 
 
