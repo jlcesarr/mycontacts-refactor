@@ -7,11 +7,12 @@ interface Contact {
   phone: string
 }
 class ContactsRepository {
-  async findAll (orderBy: string = 'ASC'): Promise<Contact[] | []> {
+  async findAll (orderBy: string = 'ASC', limit: string): Promise<Contact[] | []> {
     const direction = orderBy.toUpperCase() === 'DESC' ? 'DESC' : 'ASC'
     const rows = await db.execQuery(`
-    SELECT * FROM contacts
-    ORDER BY name ${direction}
+        SELECT * FROM contacts
+        ORDER BY name ${direction}
+        LIMIT ${isNaN(Number(limit)) || limit === '0' ? 'NULL' : limit}
     `)
     return rows
   }
