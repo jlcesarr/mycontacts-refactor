@@ -5,20 +5,23 @@
 - [x] Deve ser possível listar os contatos
 - [x] Deve ser possível listar os contatos em ordem alfabética (ascendente) ou descendente
 - [x] Deve ser possível listar uma quantidade exata de contatos
-
+- [x] Se o contato houver uma categoria vinculada, a categoria deve ser exibida
 
 ## Criação de contatos
 ### RF
 - [x] Deve ser possível criar um contato
+- [x] Deve ser possível vincular uma categoria para o contato
+
 
 ### RN
 - [x] Um contato deve haver um nome
 - [x] Não deve ser possível criar um contato, caso o e-mail informado já esteja em uso por outro contato
 
-
 ## Busca por contatos
 ### RF
 - [x] Deve ser possível buscar um contato pelo ID
+- [x] Se o contato houver uma categoria vinculada, a categoria deve ser exibida
+
 
 
 ## Atualização de contatos

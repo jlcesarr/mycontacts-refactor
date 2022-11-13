@@ -14,6 +14,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-misused-promises': 'off',
     '@typescript-eslint/no-throw-literal': 'off',
-    '@typescript-eslint/strict-boolean-expressions': 'off'
+    '@typescript-eslint/strict-boolean-expressions': 'off',
+    '@typescript-eslint/naming-convention': 'off'
   }
 }
