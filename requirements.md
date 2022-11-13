@@ -5,7 +5,7 @@
 ### RF
 - [x] Deve ser possível listar os contatos
 - [x] Deve ser possível listar os contatos em ordem alfabética (ascendente) ou descendente
-- [ ] Deve ser possível listar uma quantidade exata de contatos
+- [x] Deve ser possível listar uma quantidade exata de contatos
 
 
 ## Criação de contatos
