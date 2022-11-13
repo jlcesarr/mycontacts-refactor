@@ -45,14 +45,14 @@ class ContactsRepository {
     return row
   }
 
-  async update (id: string | number, { name, email, phone }: Partial<Contact>): Promise<Contact> {
+  async update (id: string | number, { name, email, phone, category_id }: Partial<Contact>): Promise<Contact> {
     const [row] = await db.execQuery(
       `
         UPDATE contacts
-        SET name = $1, email = $2, phone = $3
-        WHERE id = $4
+        SET name = $1, email = $2, phone = $3, category_id = $4
+        WHERE id = $5
         RETURNING *
-      `, [name, email, phone, id])
+      `, [name, email, phone, category_id, id])
     return row
   }
 
