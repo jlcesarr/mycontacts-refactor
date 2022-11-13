@@ -41,6 +41,16 @@ class ContactsRepository {
       `, [name, email, phone, id])
     return row
   }
+
+  async delete (id: string | number): Promise<any[]> {
+    const deleteOp = await db.execQuery(
+      `
+        DELETE FROM contacts
+        WHERE id = $1
+      `, [id])
+
+    return deleteOp
+  }
 }
 
 export default new ContactsRepository()

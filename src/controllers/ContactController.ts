@@ -62,6 +62,14 @@ class ContactController {
 
     return response.json(contact)
   }
+
+  async delete (request: Request, response: Response): Promise<Response> {
+    const { id } = request.params
+    ContactsRepository.delete(id)
+      .then(() => {})
+      .catch(() => {})
+    return response.sendStatus(204)
+  }
 }
 
 export default new ContactController()
