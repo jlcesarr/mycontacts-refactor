@@ -44,7 +44,7 @@
 ## Listagem de categorias
 
 ### RF
-- [ ] Deve ser possível listar as categorias
+- [X] Deve ser possível listar as categorias
 
 
 ## Criação de categorias
