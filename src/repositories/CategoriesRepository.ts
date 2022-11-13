@@ -41,6 +41,14 @@ class CategoriesRepository {
 
     return row
   }
+
+  async delete (id: string | number): Promise<any[]> {
+    const deleteOp = await db.execQuery(`
+        DELETE FROM categories
+        WHERE id = $1
+    `, [id])
+    return deleteOp
+  }
 }
 
 export default new CategoriesRepository()

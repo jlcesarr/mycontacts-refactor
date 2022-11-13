@@ -68,7 +68,7 @@
 ## Excluir categorias
 
 ### RF
-- [ ] Deve ser possível excluir uma categoria
+- [x] Deve ser possível excluir uma categoria
 
 ### RNF
-- [ ] O feedback/resposta sobre a operação de excluir uma categoria deve ser estático, independentemente do resultado da operação
+- [x] O feedback/resposta sobre a operação de excluir uma categoria deve ser estático, independentemente do resultado da operação

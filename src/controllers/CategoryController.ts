@@ -39,6 +39,16 @@ class CategoryController {
 
     return response.json(category)
   }
+
+  async delete (request: Request, response: Response): Promise<Response> {
+    const { id } = request.params
+
+    CategoriesRepository.delete(id)
+      .then(() => {})
+      .catch(() => {})
+
+    return response.sendStatus(204)
+  }
 }
 
 export default new CategoryController()

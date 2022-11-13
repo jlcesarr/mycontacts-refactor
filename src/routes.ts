@@ -12,6 +12,7 @@ router.delete('/contacts/:id', ContactController.delete)
 
 router.get('/categories', CategoryController.index)
 router.get('/categories/:id', CategoryController.show)
+router.delete('/categories/:id', CategoryController.delete)
 router.post('/categories', CategoryController.store)
 
 export default router
