@@ -10,7 +10,7 @@
 ## Criação de contatos
 ### RF
 - [x] Deve ser possível criar um contato
-- [ ] Deve ser possível vincular uma categoria para o contato
+- [x] Deve ser possível vincular uma categoria para o contato
 
 
 ### RN

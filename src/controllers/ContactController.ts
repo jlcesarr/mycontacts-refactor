@@ -10,7 +10,7 @@ class ContactController {
   }
 
   async store (request: Request, response: Response): Promise<Response> {
-    const { name, email, phone } = request.body
+    const { name, email, phone, category_id } = request.body
 
     if (!name) {
       throw new AppError(400, 'Name is required')
@@ -22,7 +22,7 @@ class ContactController {
       throw new AppError(400, 'A contact with the same email already exists')
     }
 
-    const contact = await ContactsRepository.create({ name, email, phone })
+    const contact = await ContactsRepository.create({ name, email, phone, category_id })
 
     return response.status(201).json(contact)
   }

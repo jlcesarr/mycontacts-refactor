@@ -1,11 +1,13 @@
 import * as db from '../database'
 
 interface Contact {
-  id: string
+  readonly id?: string
   name: string
   email: string
   phone: string
+  category_id: string
 }
+
 class ContactsRepository {
   async findAll (orderBy: string = 'ASC', limit: string): Promise<Contact[] | []> {
     const direction = orderBy.toUpperCase() === 'DESC' ? 'DESC' : 'ASC'
@@ -27,12 +29,12 @@ class ContactsRepository {
     return row
   }
 
-  async create ({ name, email, phone }: Omit<Contact, 'id'>): Promise<Contact> {
+  async create ({ name, email, phone, category_id }: Omit<Contact, 'id'>): Promise<Contact> {
     const [row] = await db.execQuery(`
-      INSERT INTO contacts(name, email, phone)
-      VALUES($1, $2, $3)
+      INSERT INTO contacts(name, email, phone, category_id)
+      VALUES($1, $2, $3, $4)
       RETURNING *
-    `, [name, email, phone])
+    `, [name, email, phone, category_id])
     return row
   }
 
